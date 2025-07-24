@@ -1,0 +1,1478 @@
+﻿
+
+
+<style>
+    .modal-block {
+        display: inline-block;
+        text-align: left;
+        left: 25%;
+    }
+
+    .modal-block2 {
+        background: #004a9a;
+        position: absolute;
+        z-index: 1000;
+        top: 150px;
+        /*left: 25%;*/
+    }
+
+    .modal-titulo {
+        margin: 0;
+        line-height: 1.428571429;
+        text-align: center;
+    }
+
+    .modal-cuerpo {
+        position: relative;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .modal-pie {
+        padding: 19px 20px 20px;
+        margin-top: 15px;
+        text-align: right;
+        border-top: none;
+        display: flex !important;
+        justify-content: center;
+    }
+
+    /*modal block*/
+    .modal-bn .modal-block{
+        display: flex;
+        justify-content:center;
+    }
+
+    .modal-bn .modal-block2 {
+        background-image: url("../Content/images/mp-popup-web.jpg");
+        background-size: cover;
+        padding: 60px 40px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-bn p, .modal-bn h1{
+        text-align: center;
+    }
+
+    .modal-bn .modal-header,
+    .modal-bn .modal-cuerpo {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .modal-bn .modal-header {
+        display: inline-block;
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .modal-titulo {
+        border-bottom: solid 4px #fff;
+        display: inline-block;
+        padding-bottom: 10px;
+        color: #fff;
+        font-size: 21px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .modal-bn p {
+        font-size: 18px;
+    }
+
+    .modal-bn .persona {
+        font-size: 21px;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: block;
+    }
+    a.confirmando {
+        background-color: #3971c1;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        width: 140px;
+        margin-top: 20px;
+        box-shadow: 1px 2px 9px 0px #1a4682;
+        transition: ease-in-out all .5s;
+    }
+        a.confirmando:hover {
+            color: #fff;
+            background-color: #3e7cd2;
+            transform: translateY(-2px);
+        }
+    a.confirmando p {
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        color: #fff;
+    }
+    a.confirmando i,
+    a.confirmando p {
+        transition: ease-in-out all 1s;
+    }
+    a.confirmando:hover p {
+        transform: translateY(-1px);
+    }
+    .confirmando i{
+        color: #fff !important;
+    }
+
+
+    @media only screen and (max-width: 640px){
+        .modal-bn .modal-block2{
+            background-position: right;
+            padding: 80px 40px;
+            width: 90%;
+        }
+    }
+
+</style> 
+
+
+
+<div id="ModalBlock" class="modal fade modal-bn" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display:none">
+    <div class="modal-block" role="document">
+        <div class="modal-block2">
+            <div class="modal-header">
+                <h5 class="modal-titulo">Navegador incompatible</h5>
+
+            </div>
+            <div class="modal-cuerpo">
+                <p>
+                    Su navegador <span class="persona" id="navegador"></span>
+                </p>
+            </div>
+            <a class="btn confirmando" id="botonmodalblock">
+                <p><i class="fa fa-check" aria-hidden="true"></i> Confirmar</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de servicios de la Procuraduría General de la República Dominicana">
+    <meta name="author" content="PGR">
+    <meta name="google-site-verification" content="6CZ9LUZTIivaKvHYUN4HEMxyqumlIr4ND74St9n-jkA">
+    <link href="../favicon.ico" rel="shortcut icon">
+
+    <title>Servicios en línea - VisualizarCNAP</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Content/css/animate.css">
+    <link rel="stylesheet" href="../Content/newDesing/css/libs/bootstrap.css">
+    <link rel="stylesheet" href="../Content/newDesing/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Content/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../Content/css/sass/menu-responsive.css">
+    <link rel="stylesheet" href="../Content/css/styles.css">
+    <link rel="stylesheet" href="../Content/newDesing/css/request-collapsible.css">
+    <link rel="stylesheet" href="../Content/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="../Content/css/tippy.css">
+
+    <!-- JavaScript -->
+    <script src="../Content/js/jquery-3.6.0.min.js"></script>
+    <script src="../Content/js/jquery.validate.min.js"></script>
+    <script src="../Content/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="../Content/js/BloqueoNavegador.js"></script>
+    <script>
+        $(document).ready(function () {
+            BlockNavegador();
+        });
+    </script>
+    <script src="../recaptcha/api.js" async defer></script>
+    <script src="../Content/js/modernizr-2.6.2.js"></script>
+    <script src="../Content/js/bootstrap.min.js"></script>
+    <script src="../Content/js/sweetalert.min.js"></script>
+    <script src="../Content/js/global.js"></script>
+    <script src="../scripts/tippy.js"></script>
+
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-108747416-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // hide #back-top first
+            $("#back-top").hide();
+            // fade in #back-top
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#back-top').fadeIn();
+                    } else {
+                        $('#back-top').fadeOut();
+                    }
+                });
+                // scroll body to 0px on click
+                $('#back-top a').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 1500);
+                    return false;
+                });
+            });
+        });
+    </script>
+    <style>
+        .sub-sub-menu {
+            margin-left: 100px !important;
+        }
+
+        /*        #cssmenu ul ul {
+            width: 150px !important;
+        }*/
+
+        .contenedor-buscador {
+            padding: 0;
+            border: transparent;
+            overflow: hidden;
+        }
+
+        .mapaDeSitio span {
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 8.6pt;
+            color: #333;
+        }
+
+        .buttonHelp {
+            border: transparent;
+        }
+
+        .menu-footer a {
+            color: #003b81;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .menu-footer {
+            display: none;
+        }
+
+        .btn-saltar-a-contenido,
+        .btn-saltar-a-contenido:hover {
+            color: #e3e3e3 !important;
+            background: #e3e3e3;
+            text-align: center;
+            font-size: 0pt;
+            padding: 0px;
+        }
+
+            .btn-saltar-a-contenido:active,
+            .btn-saltar-a-contenido:focus {
+                color: #ffffff !important;
+                background: #0055a5;
+                text-align: center;
+                padding: 5px;
+                font-size: 14pt;
+                border-bottom: 5px solid #004484;
+            }
+
+
+        /*Nuevos sellos Nortic Redondos 2022*/
+        .stamp-container {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            right: -103px;
+            top: 83px;
+            width: 23rem;
+        }
+
+        .stamp-box {
+            width: 108px;
+            height: 112px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .stamp {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        a.stamp {
+            position: absolute;
+            z-index: 2;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ///////////////Aquí comienza el Header de la página -->
+    <!-- ///////////////Aquí comienza la parte superior del header (Logo, Gobierno de la República Dominicana, Buscar, Inicio, Mapa del sitio, Contacto) de la página -->
+    <div id="loading-screen">
+        
+        <center style="background-color: #ffffffa1; height: 100%;">  <img src="../Content/images/cargando.gif" style="width: 234px; top: 35%; position: absolute; left: 40%;"></center>
+    </div>
+    <div class="requestD"></div>
+    <div class="pre-header">
+        
+        <img class="img-responsive img-presidencia" src="../Content/images/presidencia-de-la-republica-dominicana-2020-2024.svg">
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <!--Boton  para pasar a contenido-->
+                <a href="#nav" class="col-sm-12 btn-saltar-a-contenido">Pasar al contenido principal</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-8" id="logooo">
+                    <a href="/Home">
+                        <img id="arriba" class="logo-pgr img-responsive" src="../Content/newDesing/images/Logo-mp-sg.svg" alt="Logo PGR - Secretaría General">
+                    </a>
+                </div>
+                <div class="hidden-xs col-md-offset-5 col-md-4 contenedor-buscador" style=" padding-right:0px;">
+                    <div class="pull-right" style="padding: 13px 0px 13px 13px;">
+                        <img class="logo-escudo" src="../Content/newDesing/images/img_header_rep_dom.png" alt="RD logotipo" style="margin-bottom: 5px; margin-left: 40px;">
+                        <div class="search-block" style="margin-bottom: 10px">
+
+
+                            <div style="vertical-align">
+
+<form action="/Home/Busqueda" method="get">                                    <button class="search-button" type="submit" value="Buscar"><i class="fa fa-search" style="color:#000 !important"></i></button>
+                                    <input class="search-live buscar" name="keyword" style="display: initial !important;" type="text" id="s-header" name="s" title="Buscar" placeholder="Buscar...">
+                                    <a id="Help"><i class="fa fa-info-circle alejarIcono" style="padding: 10px; cursor: help; " aria-hidden="true" onclick="Instrucciones();"></i></a>
+</form>
+
+                            </div>
+
+                        </div>
+                        <nav style="text-align:right; color: #014884;" class="mapaDeSitio">
+                            <a href="#" target="_blank">Inicio</a><span>|</span>
+                            <a href="http://pgr.gob.do/mapa-del-sitio/" target="_blank">Mapa del Sitio</a><span>|</span>
+                            <a href="/Contactos">Contacto</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <section class="row">
+                
+                <div class="col-md-10 col-xs-10"></div>
+                <div class="col-xs-2">
+                    <div class="button_container" id="toggle">
+
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row">
+                <section class="col-sm-12">
+                    <div class="navigation">
+                        <div class="overlay" id="overlay">
+                            <div id="cssmenu" class="menu-main-navigation-container cmn-t-underline">
+                                <ul id="nav" id="menu-main-navigation" class="nav navbar-nav main-menu">
+                                    <li class="act"><a href="/Home" active="inicio"><span><i style="padding-right:7px;" class="fa fa-home hidden-sm"></i>Inicio</span></a></li>
+                                    
+                                                                        <li active="sugerencias" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/RequisitosTarifas/Nosotros"><span>Nosotros</span></a></li>
+                                    <li active="sugerencias" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://pgr.gob.do/servicios/" target="_blank"><span>Requisitos y tarifas</span></a></li>
+                                    <li active="sugerencias" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/ServicioSugerencias/create"><span>Quejas y sugerencias</span></a></li>
+                                    <li class="sub-menu-parent menu-item menu-item-type-post_type menu-item-object-page ">
+                                        <a href="/Denuncias/DenunciasGenerales"> <span>Denuncias</span></a>
+                                            
+                                    </li>
+                                    <li class="sub-menu-parent menu-item menu-item-type-post_type menu-item-object-page ">
+                                                <a id="usr-dropdown"> <span>Atención a víctimas</span></a>
+                                                <ul class=" sub-menu-denuncias">
+                                                    
+
+                                                    <li><a class="submenu-item" href="/denuncias/VictimasTestigos">Víctimas y Testigos</a></li>
+                                                    <li><a class="submenu-item" href="/denuncias/DINNAF">DINNAF</a></li>
+                                                    <li><a class="submenu-item" href="/denuncias/RepresentanteVictima">Representante Legal de la Victima</a></li>
+                                                    <li><a class="submenu-item" href="/denuncias/ViolenciaGenero">Violencia de Género</a></li>
+                                                    <li class="last-li"><a class="submenu-item" href="/denuncias/DerechosHumanos">Derechos Humanos</a></li>
+                                                    
+
+                                                    <!--<li><a style="padding-left: 10px !important;" href="/consultasenlinea/historialcompras">historial pagos</a></li>-->
+                                                    
+                                                    <!--<li class="sub-menu-parent menu-item menu-item-type-post_type menu-item-object-page hidden-xs">
+        <a id="usr-dropdown" style="padding-left: 10px !important;font-weight: 600; font-size: 13px !important;" href="#"> Mis certificados +</a>
+        <ul class="sub-menu sub-sub-menu">
+            <li><a style="padding-left: 10px !important;" href="/consultasenlinea/historialcertificados">CNAP</a></li>
+            <li><a style="padding-left: 10px !important;" href="/ExequaturCertificacion/ListadoCertifExequatur">Exequatur</a></li>
+        </ul>
+    </li>
+    <li><a style="padding-left: 10px !important;" href="/MetodoPago">Método pago</a></li>
+    <li><a style="padding-left: 10px !important;" href="/login/logout">Cerrar sesión</a></li>-->
+                                                </ul>
+                                            </li>
+
+                                            
+                                                <li active="Cerrar"><a style="padding-left: 10px !important;font-weight: 600; font-size: 13px !important;" href="/login">Iniciar sesión</a></li>
+
+                                        </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="../scripts/fastclick.js"></script>
+                    <script>
+                        $('#toggle').click(function () {
+                            $(this).toggleClass('active');
+                            $('#overlay').toggleClass('open');
+                        });
+                    </script>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="post-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <input class="search-live buscar" type="text" id="s-headerr" name="s" title="Buscar" placeholder="Buscar...">
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="servicios">
+        <div class="container post4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/">
+                            <i class="fa fa-home" aria-hidden="true" style="font-size: 17px; padding-right:5px;"></i>
+                            Inicio
+                        </a>
+                    </li>
+                                <li class="breadcrumb-item active">Servicios en l&#237;nea / </li>
+                </ol>
+            <div class="panel-body container-content" id="countDonw">
+                
+
+<link href="../Content/intro.js-2.7.0/introjs.css" rel="stylesheet">
+<script src="../Content/intro.js-2.7.0/intro.js"></script>
+
+
+
+<style>
+
+
+    .tippy-popper[x-placement^=right] [x-arrow] {
+        border-right: 10px solid #333 !important;
+        border-top: 0px solid transparent !important;
+        border-bottom: 9px solid transparent !important;
+        border-left: 29px solid transparent !important;
+        transform: rotate(-42deg) !important;
+        left: 88px !important;
+        margin: 6px 0 !important;
+    }
+
+    .card-alert-danger{
+        display:flex;
+    }
+
+    .alert-danger{
+        border-radius:20px;
+    }
+
+    .alert .fa-eye, .alert a{
+        color:#fff!important;
+    }
+    .alert a {
+        text-decoration:none;
+            background:#a94442;
+            border:1px solid#600c0c;
+            padding:10px 20px;
+            border-radius:20px;
+    }
+
+    .alert a:hover {
+        background: #700e0e;
+    }
+
+    .contenido_requisitos p {
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+    .contenido_requisitos {
+        padding: 15px;
+        text-align: justify !important;
+        background-color: white !important;
+    }
+
+        .contenido_requisitos ul {
+            padding: 9px 31px !important;
+        }
+
+
+    #accordion h4 {
+        color: #014984;
+        padding-top: 30px !important;
+        font-weight: 600;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    ul.important li {
+        list-style-type: circle !important;
+    }
+
+    #nombreCompleto {
+        font-weight: bold;
+        font-size: 21px;
+        padding-top: 15px;
+    }
+
+
+
+    /*//// -- INICIO DE MODALES - MANUS STARLIN -- ////*/
+    .modal-content {
+        text-align: center;
+        background-image: url(../Content/images/mp-popup-web.svg );
+        background-size: cover;
+        background-position: right;
+        z-index: 1000;
+        /*top: 100px;*/
+    }
+
+    .modal-body {
+        position: relative;
+        color: #fff;
+        padding: 0 !important;
+    }
+
+    .modal-header {
+        min-height: 16.428571429px;
+        border-bottom: none !important;
+        width: inherit;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /*.text-shadow {
+        padding:0 15px;
+    }*/
+
+    .mainInformationCenter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainInformationStyle {
+        backdrop-filter: blur(15px);
+        border-radius: 1rem;
+        background: rgb(48 101 147 / 70%);
+        padding: 0 20px;
+    }
+
+    h5 {
+        font-size: 21px !important;
+        text-transform: uppercase !important;
+        color: #fff !important;
+        font-weight: 600 !important;
+        margin-top: 5px !important;
+    }
+
+    .confirmar {
+        background: white !important;
+        color: #014984;
+        z-index: 2;
+        width: 115px;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+
+    span.persona {
+        display: block;
+        text-align: center;
+    }
+
+    .modal-title {
+        margin: 30px 0;
+        line-height: 1.428571429;
+        text-align: center;
+    }
+
+    .modal-footer {
+        padding: 0 !important;
+        text-align: right;
+        border-top: none;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p.entrega-certificacion {
+        font-size: 20px !important;
+    }
+
+
+    .btn-primary:hover, .btn-primary:focus {
+        background: #0d68b2 !important;
+        color: #fff;
+        border: 2px solid#fff;
+    }
+
+    .cardAvisoApostillar, .mainInformationStyle {
+        box-shadow: 3px 3px 5px 0 rgb(0 0 0 / 20%);
+    }
+
+
+    .avisoApostillar, .cardAvisoApostillar {
+        background: #2d6390;
+    }
+
+    .cardAvisoApostillar {
+        display: flex;
+        flex-direction: row;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 20px;
+        backdrop-filter: blur(2px);
+        overflow: hidden;
+    }
+
+
+
+    .avisoApostillar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .avisoApostillar__title {
+        width: 100%;
+        margin-top: -11px;
+        padding: 4px;
+    }
+
+        .avisoApostillar__title h1 {
+            margin: 7px -20px 10px -20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+            background: #600c0c;
+            padding: 20px 0 15px 0;
+        }
+
+    .avisoApostillar__body--textoAviso, span.destacar {
+        font-size: 1.4rem;
+    }
+
+    .avisoApostillar__body--textoAviso {
+        color: #fff;
+        text-align: justify !important;
+    }
+
+    .certificacionCancilleria {
+        font-weight: 600;
+    }
+
+    .presencial {
+        text-transform: uppercase;
+    }
+
+
+
+    .avisoApostillar__footer--avisoNoGenerar {
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+
+    .avisoApostillar__btnCAC {
+        font-weight: 700;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    .avisoApostillar__btnCAC--textBtn {
+        margin-left: 3px;
+        font-size: 1.4rem;
+        color: #fff;
+    }
+
+    .avisoApostillar__btnCAC:hover {
+        color: #000;
+    }
+
+
+
+    type[type=submit].btn.searchCAS:hover {
+        background: #092b50 !important;
+        color: #fff;
+    }
+</style>
+
+
+
+<style>
+    
+
+    a.btn-aqui {
+        background: #fff;
+        padding: 5px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-size: 10px;
+        text-decoration: none;
+        color: #014984;
+    }
+
+    a.btn-aqui:hover {
+        background: #2190ea;
+        padding: 5px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-size: 10px;
+        color:#fff;
+    }
+
+    
+</style>
+
+<div id="ModalAntecedentes" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-bg">
+            <div class="modal-header">
+                <h5 class="modal-title">Emisión de Certificación</h5>
+                <hr style="width: 95%!important;" class="hr-1">
+            </div>
+            <div class="modal-body" style="text-align: justify">
+                <p>
+                    Estimado usuario, en estos momentos no podemos procesar su Certificación de Buena Conducta. Favor dirigirse al Centro de Atención al Ciudadano más cercano para completar su trámite.
+                    Disculpe los inconvenientes que esto pueda ocasionarle.
+                </p>
+                <p>
+                    Si desea obtener más información sobre la ubicación de nuestros Centros de Atención al Ciudadano, favor pulse <a class="btn-aqui" href="https://portal.servicios.pgr.gob.do/Contactos">aquí </a> 
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary confirmar" id="btn-closeModal">
+                    <i class="fa fa-check alejarIcono" aria-hidden="true"></i> Confirmar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btn-closeModal").click(function () {
+        $('#ModalAntecedentes').modal('hide');
+    });
+</script>
+
+<style>
+    #nombreCompleto {
+        font-weight: bold;
+        font-size: 21px;
+        padding-top: 15px;
+    }
+
+    span.persona {
+        display: block;
+        text-align: center;
+    }
+
+</style>
+<div id="modalCNAP" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-bg">
+            <div class="modal-header">
+                <h5 class="modal-title">COMUNICADO IMPORTANTE</h5>
+                <hr class="hr-1">
+            </div>
+            <div class="modal-body">
+                <p>
+                    Distinguido usuario, si el motivo para la emisión de la Certificación de Buena Conducta es la solicitud de su Exequatur,
+                    debe dirigirse al módulo
+
+                </p>
+                <span class="persona" id="nombreCompleto">
+                    <a style="color:white" href="../ExequaturSolicitud/">“Solicitar Exequatur”</a>
+                </span>
+                <p>
+                    e iniciar su proceso por esta vía.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary confirmar" onclick="CerrarModal()">
+                    <i class="fa fa-check alejarIcono" aria-hidden="true"></i> Confirmar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-5 ">
+        <h2><span>Certificación de Buena Conducta </span></h2>
+    </div>
+
+    <div class="col-md-7 hidden-xs">
+        <a class="btn btn-primary  pull-right" href="javascript:void(0);" onclick="startIntro();" id="boton"><i class="fa fa-info-circle alejarIcono" aria-hidden="true"></i> Instructivo</a>
+    </div>
+</div>
+<div class="tab-nav">
+    <ul class="nav nav-tabs navTabCAS">
+        <li class="naVtabCAS__tabsCAS"><a class="navTabCAS__tabsCAS--btnCAS" data-toggle="tab" href="#menu1">Requisitos</a></li>
+        <li class="naVtabCAS__tabsCAS active"><a class="navTabCAS__tabsCAS--btnCAS" data-toggle="tab" href="#home">Obtener Certificado</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row queryCard">
+                        <div class="cardQuery__group">
+                            <div class="control-label col-md-12 labelCAS">Consulte su Código de Adquisición de Servicio (CAS)</div>
+                            <div class="col-md-12">
+<form action="/CertificadoNoAntecedentesPenales/VisualizarCNAP" id="formulario_cnap" method="post">                                    <div class="input-group">
+                                        <input type="text" id="NumeroCas" class="form-control searchCAS" placeholder="Introduzca número de referencia CAS" name="numeroCas">
+                                        <div class="input-group-btn">
+                                                <button class="btn  btn-search searchCAS" id="Fake" type="submit" style=" background: #014884 !important; width: 125px; height: 34px; border-radius: 0 10px 10px 0 !important; color: #fff !important;"><i style="color:white !important;" class="fa fa-search"></i> Consultar CAS</button>
+                                        </div>
+                                    </div>
+</form>                            </div>
+                            <div class="col-lg-12 queryCard__groupFooter" id="cuadroazul">
+                                <span class="queryCard__groupFooter--text"> Si aún no tiene su código <strong>CAS</strong>,<br> obténgalo en línea en tres pasos desde un computador o dispositivo móvil. </span>
+                                <a class="queryCard__groupFooter--btn" href="/comprarenlinea/"><span> <i class="fa fa-hand-pointer-o"></i> Obtener CAS</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <img class="img-cas-banreservas" src="../content/images/cas-ejemplo.jpg">
+
+                    <br>
+
+                    <marquee behavior="alternate" direction="up" scrolldelay="400" style="height: 15px; width: 10px; display: inline-block; position: absolute; left: 80%; bottom: 50px;">
+                        <span title="Número de referencia de <br/>Código de Adquisición de Servicio<br/>(CAS)" class="important-tooltip"> </span>
+                    </marquee>
+
+                    <script>
+                        var myTippy = tippy('.important-tooltip', {
+                            position: 'bottom',
+                            distance: 20,
+                            arrow: true,
+                            trigger: 'manual',
+                            size: 'big',
+                            sticky: true,
+                            performance: true,
+                            hideOnClick: false,
+                            popperOptions: {
+                                modifiers: {
+                                    flip: {
+                                        behavior: ['right', 'bottom']
+                                    }
+                                }
+                            }
+                        });
+
+                        myTippy.show(myTippy.getPopperElement($('.important-tooltip')[0]));
+
+                        $('[href="#menu1"]').click(function () {
+                            $('#boton').hide();
+                            myTippy.hide(myTippy.getPopperElement($('.important-tooltip')[0]));
+
+
+                        });
+
+                        $('[href="#home"]').click(function () {
+                            $('#boton').show();
+                            myTippy.show(myTippy.getPopperElement($('.important-tooltip')[0]));
+                        });
+
+                        //myTippy.show(myTippy.getPopperElement($('.important-tooltip')[0]));
+                        $('[href="#home"]').click();
+                    </script>
+
+
+
+                    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="enviarcorreo" hidden="hidden">
+                                <img src="/Content/imagenes/EnviarCorreo.PNG" style="width:100%">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 importantCASCard">
+                    <div class=" importantCASCard__points">
+                        <h3 class="importantCASCard__points--title"> Importante</h3>
+                        <ul class="importantCASCard__points--body">
+                            <li>• No se emite Certificación de Buena Conducta a ciudadanos menores de edad.</li>
+                            <li>• Los ciudadanos extranjeros que NO posean cédula de Identidad y Electoral deben solicitar de manera presencial la Certificación de Buena Conducta en cualquiera de nuestros Centros de Atención al Ciudadano (CAC).</li>
+                            <li>• Si existe un error en los datos que presenta el sistema sobre el solicitante, este debe dirigirse de manera inmediata al Centro de Atención al Ciudadano más cercano o escribirnos a través de nuestro soporte en línea.</li>
+                            <li>• Si usted presenta un antecedente penal del que no tiene conocimiento, visite la sección de Servicios al Ciudadano, Retiro de Ficha y consulte los requisitos correspondientes.</li>
+                            <li class="importantCASCard__points--body-child">• Si va a solicitar una Certificación de Buena Conducta para fines de apostillar, debe solicitarla de manera presencial en cualquiera de nuestros Centros de Atención al Ciudadano (CAC).</li>
+                        </ul>
+                        <div class="contact-center">
+                            <a class="avisoApostillar__btnCAC" href="https://pgr.gob.do/contactos-2/#1465307026706-539ff34c-5278" target="_blank">
+                                <span class="avisoApostillar__btnCAC--textBtn"> Ver aquí la ubicación de los Centros de Ateción al Ciudadano (CAC)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <div id="accordion">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="cardRequeriments">
+                            <div class="cardRequeriments__imgAdjust">
+                                <img class="cardRequeriments__imgAdjust--imgReq" src="../Content/images/information.svg">
+                            </div>
+                            <span class="cardRequeriments__text">Este servicio se ofrece a la ciudadanía con la finalidad de demostrar, a través de un documento oficial, que la persona solicitante no tiene antecedentes judiciales.</span>
+                        </div>
+                    </div>
+                </div>
+                <section id="item1" class="requisitosCards">
+                    <div class="requisitosCards__requisitosCardstitle ">
+                        <h6 class="requisitosCards__requisitosCardstitle--requisitosCardsText">Solicitud de Obtención en Línea de Certificación de Buena Conducta |<strong> RD$600.00</strong></h6>
+                    </div>
+                    <div class="contenido_requisitos">
+                        <span>Las certificación de Buena Conducta se pueden solicitar o a través de nuestros servicios en línea, visitando www.pgr.gob.do.</span>
+                        <p>Requisitos:</p>
+                        <ul style="list-style-type:circle;">
+                            <li>-	Tasa de servicio correspondiente. Estos pagos podrán efectuarse mediante tarjeta de crédito a través del mismo portal o a través de los agentes de pago autorizados, en cuyo caso deberá introducir el código de adquisición de servicios (CAS) que se indica en el recibo de pago de la tasa de servicio correspondiente</li>
+                        </ul>
+                        <p>Pasos a seguir para esta solicitud:</p>
+                        <ul style="    list-style-type: none;">
+                            <li>1.	Ingresar y registrarse en el portal de servicios de la Procuraduría General de la República, a través del siguiente enlace <a href="https://portal.servicios.pgr.gob.do/UsuariosCiudadanos"></a>. </li>
+                            <li>2.	Luego de registrarse, si usted ya adquirió en Banreservas la tasa de servicio correspondiente, y tiene el Boucher de pago a mano, puede seleccionar opción “Solicitar Certificación de Buena Conducta” y luego colocar el código de adquisición de servicios (CAS) ubicado en la parte posterior del comprobante.</li>
+                            <li>3. Una vez hecho esto, se presentará su Certificación, y tendrá la opción de imprimirla, guardarla o enviarla por correo electrónico.</li>
+                            <li>4.	En caso de que no tenga su tasa de servicio, puede comprarla por la plataforma, en la misma opción de solicitar Certificación de Buena Conducta, o en el apartado de Solicitar Pago de Servicios, seleccionando Certificación de Buena Conducta. Estos pagos podrán efectuarse mediante tarjeta de crédito.</li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-3 ">
+                                <div class="border-card">
+
+                                    <img class="images-service-card" src="../Content/images/horario-y-lugar.png" alt="Horarios" width="50px" pagespeed_url_hash="2823156086">
+
+                                    <div class="header-card-text">Horario y lugar de Prestación</div>
+                                    <div class="body-card-text">
+                                        En línea, 24 horas.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="border-card">
+                                    <img class="images-service-card" src="../content/images/costo-del-servicio.png" alt="Costos" width="50px" pagespeed_url_hash="2920370417">
+
+                                    <div class="header-card-text">Costo</div>
+                                    <div class="body-card-text">RD$600.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-md-3">
+                                <div class="border-card">
+                                    <img class="images-service-card" src="../content/images/tiempo-de-realizacion.png" alt="Tiempo de realización" width="50px" pagespeed_url_hash="1245284848">
+
+                                    <div class="header-card-text">Tiempo de Realización</div>
+                                    <div class="body-card-text">
+                                        Inmediato
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="border-card">
+                                    <img class="images-service-card" src="../content/images/contacto.png" alt="Contacto" width="50px" pagespeed_url_hash="910831855">
+
+                                    <div class="header-card-text">Contacto Directo</div>
+                                    <div class="body-card-text">
+                                        (809)-533-3522 <br>
+                                        Ext.: 133, 2002 y 1125.
+                                        <br>
+                                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b262e382a2f2e2a323e2f2a0b3b2c39652c2429652f24">[email&#160;protected]</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<!--modal viejo / NO TOCAR-->
+<div id="modalConfirm" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div id="center-modal" class="modal-dialog " role="document">
+        <div class="modal-content modal-content-bg">
+            <div class="mainInformationCenter mainInformationStyle">
+                <div class="modal-header modal-header-emit">
+                    <span class="modal-header-emit__modal-title text-shadow">Emisión de Certificación</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        <span class="text-shadow">La certificación a emitir será generada a nombre de:</span> <span class="persona text-shadow" id="nombreCompleto"></span>
+
+                    </p>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+
+                <div class="cardAvisoApostillar">
+
+                    <div class="avisoApostillar">
+                        <div class="avisoApostillar__title">
+                            <h1> ¡Importante! </h1>
+                        </div>
+                        <div class="avisoApostillar__body">
+                            <p class="avisoApostillar__body--textoAviso">
+                                La  Certificación de Buena Conducta <span class="certificacionCancilleria destacar">para fines de apostillar en Cancillería,</span>
+                                debe solicitarla de <span class="certificacionCancilleria destacar"> manera presencial </span> en nuestros Centros de Atención al Ciudadano (CAC).
+                            </p>
+                        </div>
+                        <a class="avisoApostillar__btnCAC" href="https://pgr.gob.do/contactos-2/#1465307026706-539ff34c-5278" target="_blank">
+                            <img width="30" target="_blank" src="../Content/imagenes/location.svg">
+                            <span class="avisoApostillar__btnCAC--textBtn"> Ver aquí la ubicación de los Centros de Ateción al Ciudadano (CAC)</span>
+                        </a>
+
+                        <div class="avisoApostillar__footer--avisoNoGenerar">
+                            <input type="checkbox" id="clausulaCheck" name="clausulaCheck" onclick="confirmacionClausula()">
+                            <label for="clausulaCheck">Leido</label>
+
+                            <button class="btn btn-primary confirmar" id="botonConfirmarClausula" name="botonConfirmarClausula" onclick="closemodalCNAP()" disabled>
+                                <i class="fa fa-check alejarIcono" aria-hidden="true"></i> Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalEnviarCorreo" class="modal fade" role="dialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-bg">
+            <div class="modal-header">
+                <h5 class="modal-title">Enviar por correo</h5>
+                <hr class="hr-1">
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    Destinatario: <br>
+                    <input type="text" class="form-control input-sm" name="correcoDestinatario" id="destinatario"> <br>
+                    Comentario: <br>
+                    <textarea class="form-control input-sm" name="comment" id="comment" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div style="float: left;" id="modalMailMessaje"></div>
+                <button type="button" class="btn btn-primary confirmar" data-dismiss="modal" id="cancelMailModalBtn">Cancelar</button>
+                <button type="button" class="btn btn-primary confirmar" id="sendMailbtn">Enviar</button>
+            </div>
+            <input type="hidden" name="NumeroCas">
+            <input type="hidden" name="cedula">
+            <input type="hidden" name="id">
+        </div>
+    </div>
+</div>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+    $("#consultarCNAP").click(function () {
+        var cas = $("[Name=NumeroCas]").val();
+        var cedula = $("[Name=cedula]").val();
+        var Url = `/CertificadoNoAntecedentesPenales/GetConsultarCnap?NumeroCas=${cas}&cedula=${cedula}`;
+        window.open(Url);
+    })
+
+
+
+    $("#sendMailbtn").click(function () {
+            var Destinatario = $("#destinatario").val();
+            var Comentario = $("#comment").val();
+            var numeroCas = $("[Name=NumeroCas]").val();
+            var cedula = $("[Name=cedula]").val();
+            var idImpuesto = $("[Name=id]").val();
+
+            var Url = "/CertificadoNoAntecedentesPenales/SendPdf";
+            showLoading();
+            $.ajax({
+                url: Url,
+                type: "POST",
+                data: {
+                    correcoDestinatario: Destinatario,
+                    NumeroCas: numeroCas,
+                    cedula: cedula,
+                    comment: Comentario,
+                    id: idImpuesto
+                },
+                success: function (data) {
+                    $('#myModal').modal('hide');
+                    if (data.Estatus != "OK") {
+                        swal(
+                            data.Message,
+                            '',
+                            'error'
+                        );
+                        var options = { "backdrop": "static", keyboard: true };
+                        $('#myModal').modal(options);
+                        $('#myModal').modal('show');
+                        hideLoading();
+                    }
+                    else {
+                        hideLoading();
+
+                        $('#ModalEnviarCorreo').modal('hide');
+                        swal(
+                            'Exito!',
+                            'Correo enviado correctamente!',
+                            'success'
+                        );
+                    }
+                }
+            });
+        });
+
+
+        $("#EnviarCorreo").click(function () {
+            var options = { "backdrop": "static", keyboard: true };
+            $('#ModalEnviarCorreo').modal(options);
+            $('#ModalEnviarCorreo').modal('show');
+        });
+        $("#closbtn").click(function () {
+            $('#ModalEnviarCorreo').modal('hide');
+        });
+
+
+
+</script>
+
+<script type="text/javascript">
+    function startIntro() {
+        $('#enviarcorreo').show();
+
+        var intro = introJs();
+        intro.setOptions({
+            steps: [
+                {
+                    element: document.querySelector('#NumeroCas'),
+                    intro: "<b>Paso 1:</b> Ingrese su Código de Adquisición de Servicio (CAS).",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector('#Consultar'),
+                    intro: "<b>Paso 2:</b> Haga clic en el botón. <button style='background: #114884 !important;' class='btn btn-default' type='button'><i style='color:white !important;' class='fa fa-search'></i></button>",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector('#enviarcorreo'),
+                    intro: "Cuando se genere su documento, puede enviarlo a su correo electrónico.",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector('#cuadroazul a'),
+                    intro: "Si desea comprar un nuevo servicio, haga clic en este vínculo.",
+                    position: 'right'
+                },
+                {
+                    intro: "¡Y listo!",
+                    position: 'right'
+                }
+            ]
+        });
+
+        intro.start();
+
+        intro.onexit(function () {
+            $('#enviarcorreo').hide();
+        });
+    }
+
+
+</script>
+
+
+<script>
+    $("#Fake").click(function (ev) {
+        myTippy.hide(myTippy.getPopperElement($('.important-tooltip')[0]));
+        $('#boton').hide();
+        $('#formulario_cnap').submit(function (e) {
+            e.preventDefault();
+        });
+
+        swal({
+            title: 'PARA PODER ACCEDER A ESTA SECCIÓN NECESITA ESTAR REGISTRADO.',
+            html: 'Para proceder con el registro es necesario que tenga correo electrónico. En caso de NO poseer correo electrónico, favor dirigirse a uno de los Centros de Atención al Ciudadano, Estafetas de Servicios y Procuradurías Fiscales.<a href="Direcciones/"> Ver direcciones aquí </a>',
+            showCancelButton: true,
+            confirmButtonText: 'Iniciar Sesión',
+            cancelButtonText: 'Registrarse',
+            cancelButtonColor: '#3085d6',
+            type: 'info'
+        }).then((result) => {
+                   window.location.href = '/login';
+        })
+         .catch( (reason) =>{
+            if (reason === "cancel") {
+                window.location.href = '/UsuariosCiudadanos/create';
+
+        }
+        });
+    });
+
+</script>
+
+
+                <myspan myvalue="/"></myspan>
+            </div>
+        </div>
+    </section>
+
+    <!-- ///////////////Aquí finaliza el cuerpo de la página -->
+    <!-- ///////////////Aquí comienza el cuerpo del Baneer - Línea 311 -->
+    <div class="container-fluid atencion-ciudadana ">
+        
+    </div>
+    <!-- ///////////////Aquí finaliza el cuerpo del Baneer - Línea 311 -->
+    <!-- ///////////////Aquí comienza el Footer de la página -->
+    <div class="col-sm-12 div-footer">
+        <div class="col-sm-8 ">
+            <div class="text-footer" style="text-align: center;">
+                <img class="logo-pgr-escudo" src="../Content/newDesing/images/RD_MP_footer.png" style="margin: 1px 0 0 -7px;">
+                <div style="margin-top: 7px;">
+                    <span><strong>Procuraduría General de la República</strong></span>
+                    <br class="v-desktop">
+                    <span class="menu-footer"><a href="https://portal.servicios.pgr.gob.do/Home">Inicio</a> | </span>
+                    <span class="menu-footer"><a target="_blank" href="https://pgr.gob.do/mapa-del-sitio/">Mapa del sitio | </a></span>
+                    <span class="menu-footer"><a href="https://portal.servicios.pgr.gob.do/Contactos">Contacto</a> </span>
+                    <br>
+                    <span class="direccion">Ave. Jiménez Moya esq. Juan Ventura Simó, Centro de los Héroes, Santo Domingo, República Dominicana</span>
+                    <br class="esconder">
+                    <span class="contactoo">Tel.:  <a href="tel:809-533-3522" style="color:#0095eb"> 809-533-3522</a> | Mesa de ayuda: ext. 133 / 1125 / 2001 / 2002 / 2004 / 2005  | Email: <a href="/cdn-cgi/l/email-protection#b8d5ddcbd9dcddd9c1cddcd9f8c8dfca96dfd7da96dcd7" style="color:#0095eb"><span class="__cf_email__" data-cfemail="54393127353031352d213035142433267a333b367a303b">[email&#160;protected]</span></a></span>
+                    <br class="esconder">
+                    <div><a href="/cdn-cgi/l/email-protection#e09285838c9594818d89858e948fa0908792ce878f82ce848fdf9395828a858394ddb08f9394958c81838923538ec090819281c0968183818e9485c0c8a5938392898281c08e8f8d829285c08485c08c81c0968183818e9485c081c08c81c0919585c081908c898381c9">Trabaja con nosotros</a></div>
+                    
+                    <span class="otras-vainas" style="color: #000000;" id="span-footer"><a target="_blank" href="https://pgr.gob.do/terminos-y-condiciones-de-uso/">Términos de Uso</a> | <a href="http://pgr.gob.do/politicas-de-privacidad/">Políticas de Privacidad</a> | <a href="http://pgr.gob.do/preguntas-frecuentes/">Preguntas Frecuentes</a></span>
+                    <br class="esconder">
+                    © 2025, Todos los Derechos Reservados
+                    <br>REPÚBLICA DOMINICANA
+                    <br>
+                    <span class="movil-version">Versión móvil certificada bajo la NORTIC A2:2013 13001-02-A20D01</span>
+                    <br>
+                </div>
+
+
+
+
+                <div class="normativas-optic ocultar-movil">
+
+                    <div class="stamp-container">
+                        <!-- 1 NORTIC A2:2016 -->
+                        <div class="stamp-box">
+                            <a href="https://nortic.ogtic.gob.do/instituciones/PGR" target="_blank" class="stamp stack-top" title="Norma para el Desarrollo y Gestión de los Portales Web y la Transparencia de los Organismos del Estado."></a>
+                            <div class="stamp">
+                                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/194" height="100" width="100" frameborder="0" scrolling="no" style="width: 100%;"></iframe>
+                            </div>
+
+                        </div>
+                        <!-- 2 NORTIC A3:2014 -->
+                        <div class="stamp-box">
+                            <a href="https://nortic.ogtic.gob.do/instituciones/PGR" target="_blank" class="stamp stack-top" title="Norma sobre Publicación de Datos Abiertos del Gobierno Dominicano."></a>
+                            <div class="stamp">
+                                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/193" height="100" width="100" frameborder="0" scrolling="no" style="width: 99%;"></iframe>
+                            </div>
+
+                        </div>
+                        <!-- 3 NORTIC A4:2014 -->
+                        <div class="stamp-box">
+                            <a href="https://nortic.ogtic.gob.do/instituciones/PGR" target="_blank" class="stamp stack-top" title="Norma para la Interoperabilidad entre los Organismos del Gobierno Dominicano."></a>
+                            <div class="stamp">
+                                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/192" height="100" width="100" frameborder="0" scrolling="no" style="width: 99%;"></iframe>
+                            </div>
+
+                        </div>
+                        <!-- 4 NORTIC E1:2018 (maximo) -->
+                        <div class="stamp-box">
+                            <a href="https://nortic.ogtic.gob.do/instituciones/PGR" target="_blank" class="stamp stack-top" title="Norma para la Gestión de las Redes Sociales en los Organismos Gubernamentales."></a>
+                            <div class="stamp">
+                                <iframe src="https://be.nortic.ogtic.gob.do/StampProcesses/Stamp/195" height="100" width="100" frameborder="0" scrolling="no" style="width: 99%;"></iframe>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="rrss">
+                    <a href="https://twitter.com/ProcuraduriaRD" target="_blank"><img src="../Content/images/Twitter-azul.png" width="25" alt="Twitter | Procuraduría General de la República"></a>
+                    <a href="https://es-la.facebook.com/ProcuraduriaGralRD/" target="_blank"><img src="../Content/images/facebook-azul.png" width="25" alt="Facebbok | Procuraduría General de la República"></a>
+                    <a href="https://www.instagram.com/procuraduriagralrd/?hl=es-la#:~:text=Procuradur%C3%ADa%20General%20RD%20(%40procuraduriagralrd)%20%E2%80%A2%20Instagram%20photos%20and%20videos" target="_blank"><img src="../Content/images/instagram-azul.png" width="25" alt="Instagram | Procuraduría General de la República"></a>
+                    <a href="https://www.youtube.com/c/ProcuraduriaGralRD" target="_blank"><img src="../Content/images/Youtube-azul.png" width="25" alt="Youtube Procuraduría General de la República"></a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="boxSessionLive" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">¿Estás ahí?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>El tiempo de espera está por terminar.    </p>
+                    <p style="font-size: xx-large; color: orange;" id="countDownBootBox"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button style="color: #137460; min-width:100px;border-color: #137460;" type="button" class="btn btn-w-md btn-accent" id="buttonModalContinueSession" data-dismiss="modal">Continuar sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../scripts/viewportchecker.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('.post').addClass("ocultar").viewportChecker({
+                classToAdd: 'mostrar animated slideInUp', // Class to add to the elements when they are visible
+                offset: 100
+            });
+        });
+        function mostrarSlides(arr) {
+            jQuery('.post').addClass('slideOutUp');
+            var a = '#' + arr;
+            jQuery(a).removeClass('slideOutUp').addClass('slideInUp');
+        }
+        jQuery('.post3').addClass("ocultar").viewportChecker({
+            classToAdd: 'mostrar animated slideInUp', // Class to add to the elements when they are visible
+            offset: 100
+        });
+    </script>
+    <p id="back-top">
+        <a href="#top"><span><img style="width: 100%;" src="../Content/images/up-arrow.png"> </span></a>
+    </p>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5bacc3209d44382222fc0f76/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        var URLactual = window.location;
+        var ContieneHome = URLactual.href.includes("?sinPermiso=True");
+        if (ContieneHome != true) {
+            localStorage.setItem('URL', URLactual);
+        }
+    </script>
+
+    <script type="text/javascript">
+        var _userway_config = {
+            /* uncomment the following line to override default position*/
+            /* position: '6', */
+            /* uncomment the following line to override default size (values: small, large)*/
+            /* size: 'large', */
+            /* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
+            /* language: 'es', */
+            /* uncomment the following line to override color set via widget (e.g., #053f67)*/
+            /* color: '#053f67', */
+            /* uncomment the following line to override type set via widget(1=person, 2=chair, 3=eye)*/
+            /* type: '2', */
+            /* uncomment the following line to override support on mobile devices*/
+            /* mobile: true, */
+            account: '7jP3dvoHNq'
+        };
+
+    </script>
+    <script type="text/javascript" src="../widget.js"></script>
+
+
+
+<script defer src="../beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4c36f6433be34534ac7b55aee2ee67c5","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

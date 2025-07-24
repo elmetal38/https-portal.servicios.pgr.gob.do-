@@ -1,0 +1,184 @@
+Uri: https://cdn.userway.org/widget.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\widget.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/certificadonoantecedentespenales/visualizarcnap
+File Name: D:\web x\portal.servicios.pgr.gob.do\certificadonoantecedentespenales\visualizarcnap.html
+Content Type: text/html
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/animate.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\animate.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/jquery.dataTables.min.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\jquery.dataTables.min.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/sass/menu-responsive.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\sass\menu-responsive.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/styles.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\styles.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/sweetalert2.min.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\sweetalert2.min.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/css/tippy.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\css\tippy.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/imagenes/location.svg
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\imagenes\location.svg
+Content Type: image/svg+xml
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/cargando.gif
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\cargando.gif
+Content Type: image/gif
+
+Uri: https://portal.servicios.pgr.gob.do/content/images/cas-ejemplo.jpg
+File Name: D:\web x\portal.servicios.pgr.gob.do\content\images\cas-ejemplo.jpg
+Content Type: image/jpeg
+
+Uri: https://portal.servicios.pgr.gob.do/content/images/contacto.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\content\images\contacto.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/content/images/costo-del-servicio.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\content\images\costo-del-servicio.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/facebook-azul.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\facebook-azul.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/horario-y-lugar.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\horario-y-lugar.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/information.svg
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\information.svg
+Content Type: image/svg+xml
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/instagram-azul.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\instagram-azul.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/mp-popup-web.svg
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\mp-popup-web.svg
+Content Type: image/svg+xml
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/presidencia-de-la-republica-dominicana-2020-2024.svg
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\presidencia-de-la-republica-dominicana-2020-2024.svg
+Content Type: image/svg+xml
+
+Uri: https://portal.servicios.pgr.gob.do/content/images/tiempo-de-realizacion.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\content\images\tiempo-de-realizacion.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/Twitter-azul.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\Twitter-azul.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/up-arrow.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\up-arrow.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/images/Youtube-azul.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\images\Youtube-azul.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/intro.js-2.7.0/intro.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\intro.js-2.7.0\intro.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/intro.js-2.7.0/introjs.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\intro.js-2.7.0\introjs.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/BloqueoNavegador.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\BloqueoNavegador.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/bootstrap.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\bootstrap.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/global.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\global.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/jquery-3.6.0.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\jquery-3.6.0.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/jquery.validate.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\jquery.validate.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/jquery.validate.unobtrusive.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\jquery.validate.unobtrusive.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/modernizr-2.6.2.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\modernizr-2.6.2.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/js/sweetalert.min.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\js\sweetalert.min.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/css/libs/bootstrap.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\css\libs\bootstrap.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/css/request-collapsible.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\css\request-collapsible.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/font-awesome/css/font-awesome.min.css
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\font-awesome\css\font-awesome.min.css
+Content Type: text/css
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/images/img_header_rep_dom.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\images\img_header_rep_dom.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/images/Logo-mp-sg.svg
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\images\Logo-mp-sg.svg
+Content Type: image/svg+xml
+
+Uri: https://portal.servicios.pgr.gob.do/Content/newDesing/images/RD_MP_footer.png
+File Name: D:\web x\portal.servicios.pgr.gob.do\Content\newDesing\images\RD_MP_footer.png
+Content Type: image/png
+
+Uri: https://portal.servicios.pgr.gob.do/favicon.ico
+File Name: D:\web x\portal.servicios.pgr.gob.do\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://portal.servicios.pgr.gob.do/scripts/fastclick.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\scripts\fastclick.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/scripts/tippy.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\scripts\tippy.js
+Content Type: application/javascript
+
+Uri: https://portal.servicios.pgr.gob.do/scripts/viewportchecker.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\scripts\viewportchecker.js
+Content Type: application/javascript
+
+Uri: https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015
+File Name: D:\web x\portal.servicios.pgr.gob.do\beacon.min.js\vcd15cbe7772f49c399c6a5babf22c1241717689176015
+Content Type: text/javascript
+
+Uri: https://www.google.com/recaptcha/api.js
+File Name: D:\web x\portal.servicios.pgr.gob.do\recaptcha\api.js
+Content Type: text/javascript
+
